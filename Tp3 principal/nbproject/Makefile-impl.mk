@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Tp2 principal
+PROJECTNAME=Tp3 principal
 
 # Active Configuration
 DEFAULTCONF=Debug

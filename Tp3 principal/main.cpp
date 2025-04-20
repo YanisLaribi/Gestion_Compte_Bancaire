@@ -58,8 +58,8 @@ int main() {
             cout << "prénom invalide, recommencez\n";
     } while (!validerNom(prenom));
 
-    int jour, mois, annee;
     do {
+        int jour, mois, annee;
         cout << "Date de naissance\n";
         cout << "Le jour [1...31] : "; cin >> jour;
         cout << "Le mois [1...12] : "; cin >> mois;

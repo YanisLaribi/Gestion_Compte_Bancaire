@@ -52,26 +52,26 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../Tp2\ Sources/dist/Debug/GNU-Linux/libtp2_sources.a
+LDLIBSOPTIONS=../Tp3\ Sources/dist/Debug/GNU-Linux/libtp3_sources.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp2_principal
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp3_principal
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp2_principal: ../Tp2\ Sources/dist/Debug/GNU-Linux/libtp2_sources.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp3_principal: ../Tp3\ Sources/dist/Debug/GNU-Linux/libtp3_sources.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp2_principal: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp3_principal: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp2_principal ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tp3_principal ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../Tp2\ Sources -I../Tp2\ Sources -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../Tp3\ Sources -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
-	cd ../Tp2\ Sources && ${MAKE}  -f Makefile CONF=Debug
+	cd ../Tp3\ Sources && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
@@ -79,7 +79,7 @@ ${OBJECTDIR}/main.o: main.cpp
 
 # Subprojects
 .clean-subprojects:
-	cd ../Tp2\ Sources && ${MAKE}  -f Makefile CONF=Debug clean
+	cd ../Tp3\ Sources && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl
