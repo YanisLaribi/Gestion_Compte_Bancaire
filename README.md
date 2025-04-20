@@ -7,3 +7,10 @@ mail: yanis.laribi.1@ulaval.ca
 Prénom : Mohamed Yanis Zaid 
 
 Nom : Laribi
+
+
+mail: abdelrahman.haroun.1@ulaval.ca
+
+Prénom : Abdelrahman
+
+Nom : Haroun
