@@ -234,7 +234,6 @@ namespace bancaire
             break;
           }
       }
-
     INVARIANTS ();
   };
 } // namespace bancaire

@@ -25,6 +25,7 @@
 #include "Epargne.h"
 #include "ContratException.h"
 #include "CompteDejaPresentException.h"
+#include "CompteAbsentException.h"
 
 using namespace bancaire;
 using namespace util;
@@ -83,6 +84,29 @@ TEST_F (ClientValide, AjouterCompte_CompteDéjàExistant_SouleverException)
   
   ASSERT_THROW (f_client.ajouterCompte (nouveauCompte), CompteDejaPresentException);
 }
+
+TEST_F(ClientValide, SupprimerCompte_CompteExistant_SupprimeLeCompteExistant)
+{
+  //taille initiale
+  int taille = f_client.reqNombreComptes();
+  
+  //ajout du compte
+  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  f_client.ajouterCompte (nouveauCompte);
+  
+  //suppression du compte
+  f_client.supprimerCompte(nouveauCompte.reqNoCompte());
+  
+  ASSERT_EQ(f_client.reqNombreComptes (), taille);
+}
+
+TEST_F(ClientValide, SupprimerCompte_CompteNonExistant_CompteAbsentException)
+{
+  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  
+  ASSERT_THROW(f_client.supprimerCompte(nouveauCompte.reqNoCompte()), CompteAbsentException);
+}
+
 
 TEST (ClientTest, Copie_ConstructeurEtAssignation)
 {
