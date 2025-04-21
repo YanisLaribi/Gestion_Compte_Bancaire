@@ -197,7 +197,6 @@ namespace bancaire
   bool
   Client::CompteEstDejaPresent (int p_noCompte) const
   {
-
     bool valide = false;
     for (auto iterateurVecteurCompte = m_comptes.begin (); iterateurVecteurCompte != m_comptes.end (); ++iterateurVecteurCompte)
       {
@@ -226,7 +225,7 @@ namespace bancaire
         throw expect;
       }
 
-    for (iterateurVecteurCompte = m_comptes.begin (); iterateurVecteurCompte != m_comptes.end (); ++iterateurVecteurCompte)
+    for (auto iterateurVecteurCompte = m_comptes.begin (); iterateurVecteurCompte != m_comptes.end (); ++iterateurVecteurCompte)
       {
         if ((*iterateurVecteurCompte) -> reqNoCompte() == p_noCompte)
           {
