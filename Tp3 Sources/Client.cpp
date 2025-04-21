@@ -18,6 +18,7 @@
 #include "Client.h"
 #include <sstream>
 #include "CompteDejaPresentException.h"
+#include "CompteAbsentException.h"
 namespace bancaire
 {
 
@@ -134,12 +135,18 @@ namespace bancaire
   void
   Client::ajouterCompte (const Compte& p_nouveauCompte)
   {
-    if (CompteEstDejaPresent(p_nouveauCompte.reqNoCompte()))
+    if (CompteEstDejaPresent (p_nouveauCompte.reqNoCompte ()))
       {
-        CompteDejaPresentException except(p_nouveauCompte.reqCompteFormate());
-        throw except;
+        std::ostringstream os;
+
+        os << "Le compte est déjà présent :"
+                << std::endl
+                << p_nouveauCompte.reqCompteFormate ();
+
+        CompteDejaPresentException expect (os.str ());
+        throw expect;
       }
-    m_comptes.push_back (p_nouveauCompte.clone());
+    m_comptes.push_back (p_nouveauCompte.clone ());
     INVARIANTS ();
   }
 
@@ -192,9 +199,9 @@ namespace bancaire
   {
 
     bool valide = false;
-    for (auto iterateurVecteurCompte = m_comptes.begin(); iterateurVecteurCompte != m_comptes.end(); ++iterateurVecteurCompte)
+    for (auto iterateurVecteurCompte = m_comptes.begin (); iterateurVecteurCompte != m_comptes.end (); ++iterateurVecteurCompte)
       {
-        if((*iterateurVecteurCompte)->reqNoCompte() == p_noCompte)
+        if ((*iterateurVecteurCompte)->reqNoCompte () == p_noCompte)
           {
             valide = true;
             break;
@@ -202,6 +209,34 @@ namespace bancaire
       }
     return valide;
   }
+
+  void
+  Client::supprimerCompte (int p_noCompte)
+  {
+    if (!(CompteEstDejaPresent (p_noCompte)))
+      {
+        std::ostringstream os;
+
+        os << "Le compte : "
+                << p_noCompte
+                << " est absent.";
+
+        CompteAbsentException expect (os.str ());
+
+        throw expect;
+      }
+
+    for (iterateurVecteurCompte = m_comptes.begin (); iterateurVecteurCompte != m_comptes.end (); ++iterateurVecteurCompte)
+      {
+        if ((*iterateurVecteurCompte) -> reqNoCompte() == p_noCompte)
+          {
+            m_comptes.erase (iterateurVecteurCompte);
+            break;
+          }
+      }
+
+    INVARIANTS ();
+  };
 } // namespace bancaire
 
 

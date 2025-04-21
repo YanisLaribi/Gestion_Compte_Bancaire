@@ -104,8 +104,10 @@ namespace bancaire
     
     /** \brief  Vérifie si le client a déjà ce compte. Si oui, elle retourne true et false sinon. */
     bool CompteEstDejaPresent(int p_noCompte) const;
+    
+    /** \brief Supprime un compte de la liste dont le numéro est reçu en paramètre */
+    void supprimerCompte (int p_noCompte);
   };
-
 } // namespace bancaire
 
 #endif /* CLIENT_H */

@@ -24,6 +24,7 @@
 #include"Cheque.h"
 #include "Epargne.h"
 #include "ContratException.h"
+#include "CompteDejaPresentException.h"
 
 using namespace bancaire;
 using namespace util;
@@ -73,6 +74,14 @@ TEST_F (ClientValide, AjouterCompteEtReqNombreComptes_AjouteCorrectementEtCompte
   int taille = f_client.reqNombreComptes ();
   f_client.ajouterCompte (nouveauCompte);
   ASSERT_EQ (f_client.reqNombreComptes (), taille + 1);
+}
+
+TEST_F (ClientValide, AjouterCompte_CompteDéjàExistant_SouleverException)
+{
+  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  f_client.ajouterCompte (nouveauCompte);
+  
+  ASSERT_THROW (f_client.ajouterCompte (nouveauCompte), CompteDejaPresentException);
 }
 
 TEST (ClientTest, Copie_ConstructeurEtAssignation)
@@ -177,3 +186,8 @@ TEST (ClientTest, ReqReleves_AfficheLeRelevéCorrectement)
 
   ASSERT_EQ (client.reqReleves (), attendu);
 }
+  
+ // TEST (ClientTest, CompteEstDejaPresent_DeuxCompteValideAjouté_RetourneFaux)
+  //{ 
+  //}
+

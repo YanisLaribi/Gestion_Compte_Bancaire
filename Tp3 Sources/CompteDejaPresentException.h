@@ -14,10 +14,18 @@
 #define COMPTEDEJAPRESENTEXCEPTION_H
 
 #include "CompteException.h"
-
+/**
+ *\class CompteDejaPresentException
+ * \brief class qui vérifie si un compte est déjà présent
+ */
 class CompteDejaPresentException : public CompteException
 {
 public:
+  
+  /**
+   * \brief Constructeur de la class CompteDejaPresentException
+   * param[in] p_raison La raison de l'exception
+   */
   CompteDejaPresentException (const std::string& p_raison);
 
 };

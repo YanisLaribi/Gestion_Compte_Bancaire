@@ -3,7 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/file.cc to edit this template
  */
 
-#include "CompteDejaPresentException.h"
 
+
+#include "CompteDejaPresentException.h"
+/**
+ * \file CompteDejaPresentException.cpp
+ * \brief implémentation des méthodes de l'exception CompteDejaPresentException
+ */
+
+
+/** \brief constructeur de l'exception CompteDejaPresentException */
 CompteDejaPresentException::CompteDejaPresentException (const std::string& p_raison)
 :CompteException(p_raison){};
