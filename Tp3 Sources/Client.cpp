@@ -17,139 +17,191 @@
 
 #include "Client.h"
 #include <sstream>
-
+#include "CompteDejaPresentException.h"
 namespace bancaire
 {
 
   /**
    * \brief Constructeur principal de la classe Client
    */
-  Client::Client(int p_noFolio, const std::string& p_nom, const std::string& p_prenom,
-                 const std::string& p_telephone, const util::Date& p_dateNaissance)
-    : m_noFolio(p_noFolio), m_nom(p_nom), m_prenom(p_prenom),
-      m_telephone(p_telephone), m_dateNaissance(p_dateNaissance)
+  Client::Client (int p_noFolio, const std::string& p_nom, const std::string& p_prenom,
+                  const std::string& p_telephone, const util::Date& p_dateNaissance)
+  : m_noFolio (p_noFolio), m_nom (p_nom), m_prenom (p_prenom),
+  m_telephone (p_telephone), m_dateNaissance (p_dateNaissance)
   {
-    PRECONDITION(p_noFolio >= 1000 && p_noFolio < 10000);
-    PRECONDITION(util::validerFormatNom(p_nom));
-    PRECONDITION(util::validerFormatNom(p_prenom));
-    PRECONDITION(!p_telephone.empty());
+    PRECONDITION (p_noFolio >= 1000 && p_noFolio < 10000);
+    PRECONDITION (util::validerFormatNom (p_nom));
+    PRECONDITION (util::validerFormatNom (p_prenom));
+    PRECONDITION (!p_telephone.empty ());
 
-    POSTCONDITION(m_noFolio == p_noFolio);
-    POSTCONDITION(m_nom == p_nom);
-    POSTCONDITION(m_prenom == p_prenom);
-    POSTCONDITION(m_telephone == p_telephone);
-    POSTCONDITION(m_dateNaissance == p_dateNaissance);
+    POSTCONDITION (m_noFolio == p_noFolio);
+    POSTCONDITION (m_nom == p_nom);
+    POSTCONDITION (m_prenom == p_prenom);
+    POSTCONDITION (m_telephone == p_telephone);
+    POSTCONDITION (m_dateNaissance == p_dateNaissance);
 
-    INVARIANTS();
+    INVARIANTS ();
   }
 
   /**
    * \brief Constructeur par copie
    */
-  Client::Client(const Client& p_client)
-    : m_noFolio(p_client.m_noFolio), m_nom(p_client.m_nom),
-      m_prenom(p_client.m_prenom), m_telephone(p_client.m_telephone),
-      m_dateNaissance(p_client.m_dateNaissance)
+  Client::Client (const Client& p_client)
+  : m_noFolio (p_client.m_noFolio), m_nom (p_client.m_nom),
+  m_prenom (p_client.m_prenom), m_telephone (p_client.m_telephone),
+  m_dateNaissance (p_client.m_dateNaissance)
   {
     for (const auto& compte : p_client.m_comptes)
-    {
-      m_comptes.push_back(compte->clone());
-    }
-    INVARIANTS();
+      {
+        m_comptes.push_back (compte->clone ());
+      }
+    INVARIANTS ();
   }
 
   /**
    * \brief Opérateur d'assignation
    */
-  Client& Client::operator=(const Client& p_client)
+  Client& Client::operator= (const Client& p_client)
   {
     if (this != &p_client)
-    {
-      m_noFolio = p_client.m_noFolio;
-      m_nom = p_client.m_nom;
-      m_prenom = p_client.m_prenom;
-      m_telephone = p_client.m_telephone;
-      m_dateNaissance = p_client.m_dateNaissance;
-      m_comptes.clear();
-
-      for (const auto& compte : p_client.m_comptes)
       {
-        m_comptes.push_back(compte->clone());
+        m_noFolio = p_client.m_noFolio;
+        m_nom = p_client.m_nom;
+        m_prenom = p_client.m_prenom;
+        m_telephone = p_client.m_telephone;
+        m_dateNaissance = p_client.m_dateNaissance;
+        m_comptes.clear ();
+
+        for (const auto& compte : p_client.m_comptes)
+          {
+            m_comptes.push_back (compte->clone ());
+          }
       }
-    }
-    INVARIANTS();
+    INVARIANTS ();
     return *this;
   }
 
-  int Client::reqNoFolio() const { return m_noFolio; }
-  const std::string& Client::reqNom() const { return m_nom; }
-  const std::string& Client::reqPrenom() const { return m_prenom; }
-  const std::string& Client::reqTelephone() const { return m_telephone; }
-  const util::Date& Client::reqDateNaissance() const { return m_dateNaissance; }
+  int
+  Client::reqNoFolio () const
+  {
+    return m_noFolio;
+  }
+
+  const std::string&
+  Client::reqNom () const
+  {
+    return m_nom;
+  }
+
+  const std::string&
+  Client::reqPrenom () const
+  {
+    return m_prenom;
+  }
+
+  const std::string&
+  Client::reqTelephone () const
+  {
+    return m_telephone;
+  }
+
+  const util::Date&
+  Client::reqDateNaissance () const
+  {
+    return m_dateNaissance;
+  }
 
   /**
    * \brief Retourne le nombre de comptes du client
    */
-  int Client::reqNombreComptes() const
+  int
+  Client::reqNombreComptes () const
   {
-    return m_comptes.size();
+    return m_comptes.size ();
   }
 
   /**
    * \brief Comparaison par folio
    */
-  bool Client::operator<(const Client& p_client) const
+  bool Client::operator< (const Client& p_client) const
   {
     return m_noFolio < p_client.m_noFolio;
   }
 
   /**
-   * \brief Ajoute un compte au client (copie dynamique)
+   * \brief Ajoute un compte au client (copie dynamique)seulement si le compte n’est pas déjà présent dans la liste.
    */
-  void Client::ajouterCompte(const Compte& p_nouveauCompte)
+  void
+  Client::ajouterCompte (const Compte& p_nouveauCompte)
   {
-    m_comptes.push_back(p_nouveauCompte.clone());
-    INVARIANTS();
+    if (CompteEstDejaPresent(p_nouveauCompte.reqNoCompte()))
+      {
+        CompteDejaPresentException except(p_nouveauCompte.reqCompteFormate());
+        throw except;
+      }
+    m_comptes.push_back (p_nouveauCompte.clone());
+    INVARIANTS ();
   }
 
   /**
    * \brief Retourne les infos personnelles du client formatées
    */
-  std::string Client::reqClientFormate() const
+  std::string
+  Client::reqClientFormate () const
   {
     std::ostringstream os;
     os << "Client no de folio : " << m_noFolio << std::endl;
     os << m_prenom << " " << m_nom << std::endl;
-    os << "Date de naissance : " << m_dateNaissance.reqDateFormatee() << std::endl;
+    os << "Date de naissance : " << m_dateNaissance.reqDateFormatee () << std::endl;
     os << m_telephone << std::endl;
-    return os.str();
+    return os.str ();
   }
 
   /**
    * \brief Retourne les relevés de tous les comptes du client
    */
-  std::string Client::reqReleves() const
+  std::string
+  Client::reqReleves () const
   {
     std::ostringstream os;
-    os << reqClientFormate();
+    os << reqClientFormate ();
     for (const auto& compte : m_comptes)
-    {
-      os << compte->reqCompteFormate();
-    }
-    return os.str();
+      {
+        os << compte->reqCompteFormate ();
+      }
+    return os.str ();
   }
 
   /**
    * \brief Vérifie les invariants de la classe Client
    */
-  void Client::verifieInvariant() const
+  void
+  Client::verifieInvariant () const
   {
-    INVARIANT(m_noFolio >= 1000 && m_noFolio < 10000);
-    INVARIANT(util::validerFormatNom(m_nom));
-    INVARIANT(util::validerFormatNom(m_prenom));
-    INVARIANT(!m_telephone.empty());
+    INVARIANT (m_noFolio >= 1000 && m_noFolio < 10000);
+    INVARIANT (util::validerFormatNom (m_nom));
+    INVARIANT (util::validerFormatNom (m_prenom));
+    INVARIANT (!m_telephone.empty ());
   }
 
+  /** 
+   * \brief  Vérifie si le client a déjà ce compte. Si oui, elle retourne true et false sinon. 
+   */
+  bool
+  Client::CompteEstDejaPresent (int p_noCompte) const
+  {
+
+    bool valide = false;
+    for (auto iterateurVecteurCompte = m_comptes.begin(); iterateurVecteurCompte != m_comptes.end(); ++iterateurVecteurCompte)
+      {
+        if((*iterateurVecteurCompte)->reqNoCompte() == p_noCompte)
+          {
+            valide = true;
+            break;
+          }
+      }
+    return valide;
+  }
 } // namespace bancaire
 
 

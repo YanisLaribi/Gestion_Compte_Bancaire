@@ -97,9 +97,13 @@ namespace bancaire
     std::string m_telephone; //!< Numéro de téléphone
     util::Date m_dateNaissance; //!< Date de naissance
     std::vector<std::unique_ptr<Compte>> m_comptes; //!< Comptes du client
+    std::vector<std::unique_ptr<Compte>>::const_iterator iterateurVecteurCompte;
 
     /** \brief Vérifie les invariants de la classe */
     void verifieInvariant() const;
+    
+    /** \brief  Vérifie si le client a déjà ce compte. Si oui, elle retourne true et false sinon. */
+    bool CompteEstDejaPresent(int p_noCompte) const;
   };
 
 } // namespace bancaire
