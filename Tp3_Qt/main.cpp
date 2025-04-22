@@ -10,7 +10,7 @@
  * Created on 21 avril 2025, 19 h 15
  */
 
-#include "fenetrePrincipale.h"
+#include "Tp3_fenetrePrincipal.h"
 #include <QApplication>
 
 int
@@ -23,7 +23,7 @@ main (int argc, char *argv[])
   
 
   // create and show your widgets here
-  FenetrePrincipale Fenetre; 
+  Tp3_fenetrePrincipal Fenetre; 
   Fenetre.show();
 
   return app.exec ();

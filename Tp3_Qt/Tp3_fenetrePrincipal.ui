@@ -27,9 +27,16 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionEpargne"/>
-    <addaction name="actionCheque"/>
+    <widget class="QMenu" name="menuAjouter_Compte">
+     <property name="title">
+      <string>Ajouter Compte</string>
+     </property>
+     <addaction name="actionCheque_2"/>
+     <addaction name="actionEpargne_2"/>
+    </widget>
+    <addaction name="menuAjouter_Compte"/>
     <addaction name="actionSupprimerCompte"/>
+    <addaction name="actionQuitter"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
@@ -46,7 +53,7 @@
   </action>
   <action name="actionSupprimerCompte">
    <property name="text">
-    <string>SupprimerCompte</string>
+    <string>Supprimer Compte</string>
    </property>
   </action>
   <action name="actionAjouterCompte">
@@ -54,11 +61,26 @@
     <string>AjouterCompte</string>
    </property>
   </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionCheque_2">
+   <property name="text">
+    <string>Cheque</string>
+   </property>
+  </action>
+  <action name="actionEpargne_2">
+   <property name="text">
+    <string>Epargne</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>actionCheque</sender>
+   <sender>actionCheque_2</sender>
    <signal>triggered()</signal>
    <receiver>Tp3_fenetrePrincipal</receiver>
    <slot>slotAjouterCheque()</slot>
@@ -74,7 +96,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionEpargne</sender>
+   <sender>actionEpargne_2</sender>
    <signal>triggered()</signal>
    <receiver>Tp3_fenetrePrincipal</receiver>
    <slot>slotAjoutEpargne()</slot>
@@ -105,10 +127,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>Tp3_fenetrePrincipal</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>455</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotAjoutEpargne()</slot>
   <slot>slotAjouterCheque()</slot>
   <slot>slotSupprimerCompte()</slot>
+  <slot>slotQuitter()</slot>
  </slots>
 </ui>

@@ -20,5 +20,5 @@ UI_DIR =
 QMAKE_CC = gcc
 QMAKE_CXX = g++
 DEFINES += 
-INCLUDEPATH += 
-LIBS += 
+INCLUDEPATH += "../Tp3 Sources" 
+LIBS += "../Tp3 Sources/dist/Debug/GNU-Linux/libtp3_sources.a"  

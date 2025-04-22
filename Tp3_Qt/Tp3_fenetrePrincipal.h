@@ -14,6 +14,14 @@
 #define _TP3_FENETREPRINCIPAL_H
 
 #include "ui_Tp3_fenetrePrincipal.h"
+#include "AjoutCheque.h"
+#include "AjoutEpargne.h"
+#include "SupprimerCompte.h"
+#include "Client.h"
+#include "Cheque.h"
+#include "Epargne.h"
+#include "CompteAbsentException.h"
+#include "CompteDejaPresentException.h"
 
 class Tp3_fenetrePrincipal : public QMainWindow
 {
@@ -21,6 +29,10 @@ class Tp3_fenetrePrincipal : public QMainWindow
 public:
   Tp3_fenetrePrincipal ();
   virtual ~Tp3_fenetrePrincipal ();
+
+
+private slots:
+  void slotAjoutEpargne ();
 private:
   Ui::Tp3_fenetrePrincipal widget;
 };

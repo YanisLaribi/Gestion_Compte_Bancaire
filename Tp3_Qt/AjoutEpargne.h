@@ -21,6 +21,18 @@ class AjoutEpargne : public QDialog
 public:
   AjoutEpargne ();
   virtual ~AjoutEpargne ();
+
+  int reqCompte () const;
+
+  double reqTauxInteret () const;
+
+  float reqSolde () const;
+
+  const std::string reqDesc () const;
+
+private slots:
+  void slotAjoutEpargne ();
+
 private:
   Ui::AjoutEpargne widget;
 };

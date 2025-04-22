@@ -11,10 +11,31 @@
  */
 
 #include "Tp3_fenetrePrincipal.h"
+#include <qmessagebox.h>
 
 Tp3_fenetrePrincipal::Tp3_fenetrePrincipal ()
 {
   widget.setupUi (this);
+}
+
+void
+Tp3_fenetrePrincipal::slotAjoutEpargne ()
+{
+  AjoutEpargne ep;
+  if (ep.exec ())
+    {
+      try
+        {
+          bancaire::Epargne epTest (ep.reqCompte (), ep.reqTauxInteret (), ep.reqSolde (), ep.reqDesc ());
+        }
+
+      catch (CompteDejaPresentException& e)
+        {
+          QString message = (e.what ());
+
+          QMessageBox::information (this, "ERREUR", message);
+        }
+    }
 }
 
 Tp3_fenetrePrincipal::~Tp3_fenetrePrincipal () { }
