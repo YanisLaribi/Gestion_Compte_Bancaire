@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Tp3_fenetrePrincipal</class>
+ <widget class="QMainWindow" name="Tp3_fenetrePrincipal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>911</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tp3_fenetrePrincipal</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>911</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionEpargne"/>
+    <addaction name="actionCheque"/>
+    <addaction name="actionSupprimerCompte"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionEpargne">
+   <property name="text">
+    <string>Epargne</string>
+   </property>
+  </action>
+  <action name="actionCheque">
+   <property name="text">
+    <string>Cheque</string>
+   </property>
+  </action>
+  <action name="actionSupprimerCompte">
+   <property name="text">
+    <string>SupprimerCompte</string>
+   </property>
+  </action>
+  <action name="actionAjouterCompte">
+   <property name="text">
+    <string>AjouterCompte</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionCheque</sender>
+   <signal>triggered()</signal>
+   <receiver>Tp3_fenetrePrincipal</receiver>
+   <slot>slotAjouterCheque()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>455</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEpargne</sender>
+   <signal>triggered()</signal>
+   <receiver>Tp3_fenetrePrincipal</receiver>
+   <slot>slotAjoutEpargne()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>455</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSupprimerCompte</sender>
+   <signal>triggered()</signal>
+   <receiver>Tp3_fenetrePrincipal</receiver>
+   <slot>slotSupprimerCompte()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>455</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotAjoutEpargne()</slot>
+  <slot>slotAjouterCheque()</slot>
+  <slot>slotSupprimerCompte()</slot>
+ </slots>
+</ui>
