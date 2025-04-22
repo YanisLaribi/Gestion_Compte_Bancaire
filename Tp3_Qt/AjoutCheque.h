@@ -21,6 +21,23 @@ class AjoutCheque : public QDialog
 public:
   AjoutCheque ();
   virtual ~AjoutCheque ();
+
+  int reqCompte () const;
+
+  double reqTauxInteret () const;
+
+  float reqSolde () const;
+
+  const std::string reqDesc () const;
+  
+  int reqNombreTransaction() const;
+  
+  double reqTauxMin() const;
+
+private slots:
+  void slotAjoutCheque ();
+
+
 private:
   Ui::AjoutCheque widget;
 };

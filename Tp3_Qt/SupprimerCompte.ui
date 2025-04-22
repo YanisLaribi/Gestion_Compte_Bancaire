@@ -51,5 +51,25 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SupprimerCompte</receiver>
+   <slot>slotSupprimerCompte()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotSupprimerCompte()</slot>
+ </slots>
 </ui>

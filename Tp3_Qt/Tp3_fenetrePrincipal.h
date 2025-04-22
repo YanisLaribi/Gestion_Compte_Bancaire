@@ -33,6 +33,7 @@ public:
 
 private slots:
   void slotAjoutEpargne ();
+  void slotAjoutCheque ();
 private:
   Ui::Tp3_fenetrePrincipal widget;
 };

@@ -52,16 +52,16 @@ OBJECTS_DIR   = build/Debug/GNU-Linux/
 
 ####### Files
 
-SOURCES       = AjoutCheque.cpp \
-		AjoutEpargne.cpp \
+SOURCES       = AjoutEpargne.cpp \
+		AjouterCheque.cpp \
 		SupprimerCompte.cpp \
 		Tp3_fenetrePrincipal.cpp \
 		main.cpp moc_AjoutCheque.cpp \
 		moc_AjoutEpargne.cpp \
 		moc_SupprimerCompte.cpp \
 		moc_Tp3_fenetrePrincipal.cpp
-OBJECTS       = build/Debug/GNU-Linux/AjoutCheque.o \
-		build/Debug/GNU-Linux/AjoutEpargne.o \
+OBJECTS       = build/Debug/GNU-Linux/AjoutEpargne.o \
+		build/Debug/GNU-Linux/AjouterCheque.o \
 		build/Debug/GNU-Linux/SupprimerCompte.o \
 		build/Debug/GNU-Linux/Tp3_fenetrePrincipal.o \
 		build/Debug/GNU-Linux/main.o \
@@ -149,8 +149,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		nbproject/nbproject/qt-Debug.pro AjoutCheque.h \
 		AjoutEpargne.h \
 		SupprimerCompte.h \
-		Tp3_fenetrePrincipal.h AjoutCheque.cpp \
-		AjoutEpargne.cpp \
+		Tp3_fenetrePrincipal.h AjoutEpargne.cpp \
+		AjouterCheque.cpp \
 		SupprimerCompte.cpp \
 		Tp3_fenetrePrincipal.cpp \
 		main.cpp
@@ -339,7 +339,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents AjoutCheque.h AjoutEpargne.h SupprimerCompte.h Tp3_fenetrePrincipal.h $(DISTDIR)/
-	$(COPY_FILE) --parents AjoutCheque.cpp AjoutEpargne.cpp SupprimerCompte.cpp Tp3_fenetrePrincipal.cpp main.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents AjoutEpargne.cpp AjouterCheque.cpp SupprimerCompte.cpp Tp3_fenetrePrincipal.cpp main.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents AjoutCheque.ui AjoutEpargne.ui SupprimerCompte.ui Tp3_fenetrePrincipal.ui $(DISTDIR)/
 
 
@@ -448,13 +448,13 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-build/Debug/GNU-Linux/AjoutCheque.o: AjoutCheque.cpp AjoutCheque.h \
-		ui_AjoutCheque.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/AjoutCheque.o AjoutCheque.cpp
-
 build/Debug/GNU-Linux/AjoutEpargne.o: AjoutEpargne.cpp AjoutEpargne.h \
 		ui_AjoutEpargne.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/AjoutEpargne.o AjoutEpargne.cpp
+
+build/Debug/GNU-Linux/AjouterCheque.o: AjouterCheque.cpp AjoutCheque.h \
+		ui_AjoutCheque.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/AjouterCheque.o AjouterCheque.cpp
 
 build/Debug/GNU-Linux/SupprimerCompte.o: SupprimerCompte.cpp SupprimerCompte.h \
 		ui_SupprimerCompte.h

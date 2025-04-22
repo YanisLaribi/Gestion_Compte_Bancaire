@@ -28,12 +28,12 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
-    QLineEdit *lineEdit_6;
+    QLineEdit *lineEditComte;
+    QLineEdit *lineEditSolde;
+    QLineEdit *lineEditDesc;
+    QLineEdit *lineEditTransactions;
+    QLineEdit *lineEditTaux;
+    QLineEdit *lineEditTauxMin;
 
     void setupUi(QDialog *AjoutCheque)
     {
@@ -61,26 +61,27 @@ public:
         label_6 = new QLabel(AjoutCheque);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(30, 280, 141, 16));
-        lineEdit = new QLineEdit(AjoutCheque);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(200, 20, 113, 28));
-        lineEdit_2 = new QLineEdit(AjoutCheque);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(200, 120, 113, 28));
-        lineEdit_3 = new QLineEdit(AjoutCheque);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(200, 170, 113, 28));
-        lineEdit_4 = new QLineEdit(AjoutCheque);
-        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
-        lineEdit_4->setGeometry(QRect(200, 220, 113, 28));
-        lineEdit_5 = new QLineEdit(AjoutCheque);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-        lineEdit_5->setGeometry(QRect(200, 70, 113, 28));
-        lineEdit_6 = new QLineEdit(AjoutCheque);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-        lineEdit_6->setGeometry(QRect(200, 280, 113, 28));
+        lineEditComte = new QLineEdit(AjoutCheque);
+        lineEditComte->setObjectName(QString::fromUtf8("lineEditComte"));
+        lineEditComte->setGeometry(QRect(200, 20, 113, 28));
+        lineEditSolde = new QLineEdit(AjoutCheque);
+        lineEditSolde->setObjectName(QString::fromUtf8("lineEditSolde"));
+        lineEditSolde->setGeometry(QRect(200, 120, 113, 28));
+        lineEditDesc = new QLineEdit(AjoutCheque);
+        lineEditDesc->setObjectName(QString::fromUtf8("lineEditDesc"));
+        lineEditDesc->setGeometry(QRect(200, 170, 113, 28));
+        lineEditTransactions = new QLineEdit(AjoutCheque);
+        lineEditTransactions->setObjectName(QString::fromUtf8("lineEditTransactions"));
+        lineEditTransactions->setGeometry(QRect(200, 220, 113, 28));
+        lineEditTaux = new QLineEdit(AjoutCheque);
+        lineEditTaux->setObjectName(QString::fromUtf8("lineEditTaux"));
+        lineEditTaux->setGeometry(QRect(200, 70, 113, 28));
+        lineEditTauxMin = new QLineEdit(AjoutCheque);
+        lineEditTauxMin->setObjectName(QString::fromUtf8("lineEditTauxMin"));
+        lineEditTauxMin->setGeometry(QRect(200, 280, 113, 28));
 
         retranslateUi(AjoutCheque);
+        QObject::connect(pushButton, SIGNAL(clicked()), AjoutCheque, SLOT(slotAjoutCheque()));
 
         QMetaObject::connectSlotsByName(AjoutCheque);
     } // setupUi

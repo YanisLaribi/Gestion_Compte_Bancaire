@@ -20,8 +20,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>AjoutCheque.cpp</itemPath>
       <itemPath>AjoutEpargne.cpp</itemPath>
+      <itemPath>AjouterCheque.cpp</itemPath>
       <itemPath>SupprimerCompte.cpp</itemPath>
       <itemPath>Tp3_fenetrePrincipal.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -72,8 +72,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="AjoutCheque.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="AjoutCheque.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="AjoutCheque.ui" ex="false" tool="3" flavor2="0">
@@ -83,6 +81,8 @@
       <item path="AjoutEpargne.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="AjoutEpargne.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AjouterCheque.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SupprimerCompte.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -123,8 +123,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="AjoutCheque.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="AjoutCheque.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="AjoutCheque.ui" ex="false" tool="3" flavor2="0">
@@ -134,6 +132,8 @@
       <item path="AjoutEpargne.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="AjoutEpargne.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="AjouterCheque.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SupprimerCompte.cpp" ex="false" tool="1" flavor2="0">
       </item>

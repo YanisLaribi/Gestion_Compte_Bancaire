@@ -41,6 +41,7 @@ public:
         lineEdit->setGeometry(QRect(230, 40, 121, 41));
 
         retranslateUi(SupprimerCompte);
+        QObject::connect(pushButton, SIGNAL(clicked()), SupprimerCompte, SLOT(slotSupprimerCompte()));
 
         QMetaObject::connectSlotsByName(SupprimerCompte);
     } // setupUi

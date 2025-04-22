@@ -78,7 +78,7 @@ public:
         menuAjouter_Compte->addAction(actionEpargne_2);
 
         retranslateUi(Tp3_fenetrePrincipal);
-        QObject::connect(actionCheque_2, SIGNAL(triggered()), Tp3_fenetrePrincipal, SLOT(slotAjouterCheque()));
+        QObject::connect(actionCheque_2, SIGNAL(triggered()), Tp3_fenetrePrincipal, SLOT(slotAjoutCheque()));
         QObject::connect(actionEpargne_2, SIGNAL(triggered()), Tp3_fenetrePrincipal, SLOT(slotAjoutEpargne()));
         QObject::connect(actionSupprimerCompte, SIGNAL(triggered()), Tp3_fenetrePrincipal, SLOT(slotSupprimerCompte()));
         QObject::connect(actionQuitter, SIGNAL(triggered()), Tp3_fenetrePrincipal, SLOT(close()));

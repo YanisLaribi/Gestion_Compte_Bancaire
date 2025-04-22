@@ -38,4 +38,23 @@ Tp3_fenetrePrincipal::slotAjoutEpargne ()
     }
 }
 
+void Tp3_fenetrePrincipal::slotAjoutCheque()
+{
+  AjoutCheque ec;
+  if (ec.exec ())
+    {
+      try
+        {
+          bancaire::Cheque ecTest (ec.reqCompte (), ec.reqTauxInteret (), ec.reqSolde (), ec.reqNombreTransaction (), ec.reqTauxMin(), ec.reqDesc ());
+        }
+
+      catch (CompteDejaPresentException& e)
+        {
+          QString message = (e.what ());
+
+          QMessageBox::information (this, "ERREUR", message);
+        }
+    }
+}
+
 Tp3_fenetrePrincipal::~Tp3_fenetrePrincipal () { }

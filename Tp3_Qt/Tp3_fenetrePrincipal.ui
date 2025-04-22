@@ -83,7 +83,7 @@
    <sender>actionCheque_2</sender>
    <signal>triggered()</signal>
    <receiver>Tp3_fenetrePrincipal</receiver>
-   <slot>slotAjouterCheque()</slot>
+   <slot>slotAjoutCheque()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -146,7 +146,7 @@
  </connections>
  <slots>
   <slot>slotAjoutEpargne()</slot>
-  <slot>slotAjouterCheque()</slot>
+  <slot>slotAjoutCheque()</slot>
   <slot>slotSupprimerCompte()</slot>
   <slot>slotQuitter()</slot>
  </slots>
