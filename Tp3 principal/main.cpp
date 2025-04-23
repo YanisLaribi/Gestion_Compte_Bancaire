@@ -178,10 +178,10 @@ main ()
 
   do
     {
-      cout << "Taux d'Intéret (entre 0.001 et 0.035) : ";
+      cout << "Taux d'Intéret (entre 0.1 et 3.5) : ";
       cin >> tauxEpargne;
     }
-  while (tauxEpargne < 0.001 || tauxEpargne > 0.035);
+  while (tauxEpargne < 0.1 || tauxEpargne > 3.5);
 
   do
     {

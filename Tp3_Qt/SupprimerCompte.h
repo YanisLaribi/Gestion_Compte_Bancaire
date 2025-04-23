@@ -14,6 +14,7 @@
 #define _SUPPRIMERCOMPTE_H
 
 #include "ui_SupprimerCompte.h"
+#include "Client.h"
 
 class SupprimerCompte : public QDialog
 {
@@ -21,8 +22,15 @@ class SupprimerCompte : public QDialog
 public:
   SupprimerCompte ();
   virtual ~SupprimerCompte ();
+  
+  int reqCompte () const;
+  
+  private slots:
+  void slotSupprimerCompte ();
+
 private:
   Ui::SupprimerCompte widget;
+
 };
 
 #endif /* _SUPPRIMERCOMPTE_H */

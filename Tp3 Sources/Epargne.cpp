@@ -19,7 +19,7 @@ namespace bancaire
   Epargne::Epargne(int p_noCompte, double p_tauxInteret, float p_solde, const std::string& p_description)
     : Compte(p_noCompte, p_tauxInteret, p_solde, p_description)
   {
-    PRECONDITION(p_tauxInteret >= 0.001 && p_tauxInteret <= 0.035);
+    PRECONDITION(p_tauxInteret >= 0.1 && p_tauxInteret <= 3.5);
     PRECONDITION(p_solde >= 0);
 
     POSTCONDITION(reqTauxInteret() == p_tauxInteret);
@@ -33,7 +33,7 @@ namespace bancaire
    */
   double Epargne::calculerInteret() const
   {
-    return reqSolde() * reqTauxInteret();
+    return reqSolde() * (reqTauxInteret()/100);
   }
 
   /**
@@ -72,7 +72,7 @@ namespace bancaire
    */
   void Epargne::asgTauxInteret(double p_tauxInteret)
   {
-    PRECONDITION(p_tauxInteret >= 0.001 && p_tauxInteret <= 0.035);
+    PRECONDITION(p_tauxInteret >= 0.1 && p_tauxInteret <= 3.5);
     Compte::asgTauxInteret(p_tauxInteret);
     POSTCONDITION(reqTauxInteret() == p_tauxInteret);
     INVARIANTS();
@@ -83,7 +83,7 @@ namespace bancaire
    */
   void Epargne::verifieInvariant() const
   {
-    INVARIANT(reqTauxInteret() >= 0.001 && reqTauxInteret() <= 0.035);
+    INVARIANT((reqTauxInteret()) >= 0.1 && (reqTauxInteret()) <= 3.5);
     INVARIANT(reqSolde() >= 0);
   }
 

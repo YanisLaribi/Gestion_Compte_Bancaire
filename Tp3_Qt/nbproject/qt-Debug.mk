@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Tp3_Qt1.0.0
-DISTDIR = /home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/build/Debug/GNU-Linux/Tp3_Qt1.0.0
+DISTDIR = /home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/build/Debug/GNU-Linux/Tp3_Qt1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS) ../Tp3\ Sources/dist/Debug/GNU-Linux/libtp3_sources.a /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
@@ -379,19 +379,24 @@ moc_AjoutCheque.cpp: AjoutCheque.h \
 		ui_AjoutCheque.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include AjoutCheque.h -o moc_AjoutCheque.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include AjoutCheque.h -o moc_AjoutCheque.cpp
 
 moc_AjoutEpargne.cpp: AjoutEpargne.h \
 		ui_AjoutEpargne.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include AjoutEpargne.h -o moc_AjoutEpargne.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include AjoutEpargne.h -o moc_AjoutEpargne.cpp
 
 moc_SupprimerCompte.cpp: SupprimerCompte.h \
 		ui_SupprimerCompte.h \
+		../Tp3\ Sources/Client.h \
+		../Tp3\ Sources/Compte.h \
+		../Tp3\ Sources/Date.h \
+		../Tp3\ Sources/validationFormat.h \
+		../Tp3\ Sources/ContratException.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include SupprimerCompte.h -o moc_SupprimerCompte.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include SupprimerCompte.h -o moc_SupprimerCompte.cpp
 
 moc_Tp3_fenetrePrincipal.cpp: Tp3_fenetrePrincipal.h \
 		ui_Tp3_fenetrePrincipal.h \
@@ -413,7 +418,7 @@ moc_Tp3_fenetrePrincipal.cpp: Tp3_fenetrePrincipal.h \
 		../Tp3\ Sources/CompteDejaPresentException.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/Tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include Tp3_fenetrePrincipal.h -o moc_Tp3_fenetrePrincipal.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/nbproject -I'/home/etudiant/Desktop/tp3/tp3-integration-travail-en-quipe-equipe-110/Tp3_Qt/Tp3 Sources' -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include Tp3_fenetrePrincipal.h -o moc_Tp3_fenetrePrincipal.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -457,7 +462,12 @@ build/Debug/GNU-Linux/AjouterCheque.o: AjouterCheque.cpp AjoutCheque.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/AjouterCheque.o AjouterCheque.cpp
 
 build/Debug/GNU-Linux/SupprimerCompte.o: SupprimerCompte.cpp SupprimerCompte.h \
-		ui_SupprimerCompte.h
+		ui_SupprimerCompte.h \
+		../Tp3\ Sources/Client.h \
+		../Tp3\ Sources/Compte.h \
+		../Tp3\ Sources/Date.h \
+		../Tp3\ Sources/validationFormat.h \
+		../Tp3\ Sources/ContratException.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/Debug/GNU-Linux/SupprimerCompte.o SupprimerCompte.cpp
 
 build/Debug/GNU-Linux/Tp3_fenetrePrincipal.o: Tp3_fenetrePrincipal.cpp Tp3_fenetrePrincipal.h \

@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -31,6 +32,7 @@ public:
     QAction *actionCheque_2;
     QAction *actionEpargne_2;
     QWidget *centralwidget;
+    QPlainTextEdit *textEditReleves;
     QMenuBar *menubar;
     QMenu *menuMenu;
     QMenu *menuAjouter_Compte;
@@ -57,6 +59,10 @@ public:
         actionEpargne_2->setObjectName(QString::fromUtf8("actionEpargne_2"));
         centralwidget = new QWidget(Tp3_fenetrePrincipal);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        textEditReleves = new QPlainTextEdit(centralwidget);
+        textEditReleves->setObjectName(QString::fromUtf8("textEditReleves"));
+        textEditReleves->setGeometry(QRect(60, 30, 801, 481));
+        textEditReleves->setReadOnly(true);
         Tp3_fenetrePrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Tp3_fenetrePrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));

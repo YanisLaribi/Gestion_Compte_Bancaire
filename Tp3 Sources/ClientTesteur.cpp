@@ -102,9 +102,8 @@ TEST_F(ClientValide, SupprimerCompte_CompteExistant_SupprimeLeCompteExistant)
 
 TEST_F(ClientValide, SupprimerCompte_CompteNonExistant_CompteAbsentException)
 {
-  Epargne nouveauCompte (3002, 0.02, 500, "salut");
   
-  ASSERT_THROW(f_client.supprimerCompte(nouveauCompte.reqNoCompte()), CompteAbsentException);
+  ASSERT_THROW(f_client.supprimerCompte(1000), CompteAbsentException);
 }
 
 

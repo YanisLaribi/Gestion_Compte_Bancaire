@@ -11,10 +11,29 @@
  */
 
 #include "SupprimerCompte.h"
+#include <qmessagebox.h>
+#include "Client.h"
 
 SupprimerCompte::SupprimerCompte ()
 {
   widget.setupUi (this);
 }
 
-SupprimerCompte::~SupprimerCompte () { }
+int
+SupprimerCompte::reqCompte () const
+{
+  return widget.lineEdit->text ().toInt ();
+}
+
+void
+SupprimerCompte::slotSupprimerCompte ()
+{
+  if (reqCompte () < 0)
+    {
+      QString message = "Numéro de Compte Invalide";
+      QMessageBox::information (this, "ERREUR", message);
+      return;
+    }
+  accept();
+}
+SupprimerCompte::~SupprimerCompte (){}

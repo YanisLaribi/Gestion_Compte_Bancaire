@@ -53,9 +53,9 @@ AjoutEpargne::slotAjoutEpargne ()
       return;
     }
 
-  if ((reqTauxInteret () < 0.001) or (reqTauxInteret () > 0.035))
+  if (((reqTauxInteret ())< 0.1) or ((reqTauxInteret ()) > 3.5))
     {
-      QString message = "Taux d'interet doit être entre 0.001 et 0.035";
+      QString message = "Taux d'interet doit être entre 0.1 et 3.5";
       QMessageBox::information (this, "ERREUR", message);
       return;
     }
@@ -73,6 +73,7 @@ AjoutEpargne::slotAjoutEpargne ()
       QMessageBox::information (this, "ERREUR", message);
       return;
     }
+  
 
 
   accept ();

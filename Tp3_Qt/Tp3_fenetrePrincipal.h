@@ -22,6 +22,7 @@
 #include "Epargne.h"
 #include "CompteAbsentException.h"
 #include "CompteDejaPresentException.h"
+#include "ContratException.h"
 
 class Tp3_fenetrePrincipal : public QMainWindow
 {
@@ -29,13 +30,15 @@ class Tp3_fenetrePrincipal : public QMainWindow
 public:
   Tp3_fenetrePrincipal ();
   virtual ~Tp3_fenetrePrincipal ();
-
+  void afficherReleves ();
 
 private slots:
   void slotAjoutEpargne ();
   void slotAjoutCheque ();
+  void slotSupprimerCompte ();
 private:
   Ui::Tp3_fenetrePrincipal widget;
+  bancaire::Client m_client;
 };
 
 #endif /* _TP3_FENETREPRINCIPAL_H */

@@ -65,7 +65,7 @@ AjoutCheque::slotAjoutCheque ()
       return;
     }
 
-  if (reqTauxInteret () < reqTauxMin ())
+  if ((reqTauxInteret ()/100) < (reqTauxMin()/100))
     {
       QString message = "Taux d'interet doit être supérieur au taux minimum";
       QMessageBox::information (this, "ERREUR", message);
@@ -87,22 +87,22 @@ AjoutCheque::slotAjoutCheque ()
     }
 
 
-  if (reqTauxMin () < 0.001)
+  if ((reqTauxMin ()/100) < 0.001)
     {
-      QString message = "Taux d'interet minimum doit être supérieur à 0.001";
+      QString message = "Taux d'interet minimum doit être supérieur à 0.1";
       QMessageBox::information (this, "ERREUR", message);
       return;
     }
   
    if (reqNombreTransaction () > 40 or reqNombreTransaction () < 0)
     {
-      QString message = "Votre nombre de transaction doit être inférieur à 40 ou supérieur à 0";
+      QString message = "Le nombre de transactions doit être entre 0 et 40 inclusivement.";
       QMessageBox::information (this, "ERREUR", message);
       return;
     }
 
 
   accept ();
-};
+}
 
 AjoutCheque::~AjoutCheque () { }
