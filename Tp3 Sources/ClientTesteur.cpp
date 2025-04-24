@@ -71,7 +71,7 @@ TEST (ClientTest, Constructeur_TelephoneVide)
 
 TEST_F (ClientValide, AjouterCompteEtReqNombreComptes_AjouteCorrectementEtCompteCorrectement)
 {
-  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  Epargne nouveauCompte (3002, 0.2, 500, "salut");
   int taille = f_client.reqNombreComptes ();
   f_client.ajouterCompte (nouveauCompte);
   ASSERT_EQ (f_client.reqNombreComptes (), taille + 1);
@@ -79,7 +79,7 @@ TEST_F (ClientValide, AjouterCompteEtReqNombreComptes_AjouteCorrectementEtCompte
 
 TEST_F (ClientValide, AjouterCompte_CompteDéjàExistant_SouleverException)
 {
-  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  Epargne nouveauCompte (3002, 0.2, 500, "salut");
   f_client.ajouterCompte (nouveauCompte);
   
   ASSERT_THROW (f_client.ajouterCompte (nouveauCompte), CompteDejaPresentException);
@@ -91,7 +91,7 @@ TEST_F(ClientValide, SupprimerCompte_CompteExistant_SupprimeLeCompteExistant)
   int taille = f_client.reqNombreComptes();
   
   //ajout du compte
-  Epargne nouveauCompte (3002, 0.02, 500, "salut");
+  Epargne nouveauCompte (3002, 0.2, 500, "salut");
   f_client.ajouterCompte (nouveauCompte);
   
   //suppression du compte
@@ -110,7 +110,7 @@ TEST_F(ClientValide, SupprimerCompte_CompteNonExistant_CompteAbsentException)
 TEST (ClientTest, Copie_ConstructeurEtAssignation)
 {
   Client original (1234, "Zira", "Nelo", "1234567890", Date (15, 7, 2000));
-  Epargne compte (2001, 0.025, 1500.0f, "Vacances");
+  Epargne compte (2001, 0.5, 1500.0f, "Vacances");
   original.ajouterCompte (compte);
 
   Client copie (original);
@@ -178,7 +178,7 @@ TEST (ClientTest, ReqReleves_AfficheLeRelevéCorrectement)
   Client client (5000, "BLO", "Joe", "418 656-2131", Date (12, 5, 1979));
 
   Cheque cheque (1002, 1.2, -500, 4, 0.3, "courant");
-  Epargne epargne (1001, 0.034, 500, "voyage");
+  Epargne epargne (1001, 0.4, 500, "voyage");
 
   client.ajouterCompte (cheque);
   client.ajouterCompte (epargne);
@@ -201,7 +201,7 @@ TEST (ClientTest, ReqReleves_AfficheLeRelevéCorrectement)
           << "numero : 1001\n"
           << "Description : voyage\n"
           << "Date d'ouverture : " << epargne.reqDateOuverture () << "\n"
-          << "Taux d'interet : 0.034\n"
+          << "Taux d'interet : 0.4\n"
           << "Solde : 500 $\n"
           << "Interet : "<< epargne.calculerInteret () << "$" << std::endl;
 

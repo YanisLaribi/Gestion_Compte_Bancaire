@@ -27,7 +27,7 @@ class EpargneValide : public ::testing::Test
 {
 protected:
     EpargneValide()
-        : f_epargne(3002, 0.02, 500, "vacances") {}
+        : f_epargne(3002, 0.2, 500, "vacances") {}
 
     Epargne f_epargne;
 };
@@ -36,7 +36,7 @@ protected:
 
 TEST_F(EpargneValide, Constructeur_parametresValides_objetValide)
 {
-    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.02);
+    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.2);
     ASSERT_EQ(f_epargne.reqSolde(), 500);
     ASSERT_EQ(f_epargne.reqDescription(), "vacances");
 }
@@ -49,8 +49,8 @@ TEST_F(EpargneValide, AsgSolde_valeurValide_modifieSolde)
 
 TEST_F(EpargneValide, AsgTauxInteret_valeurValide_modifieTaux)
 {
-    f_epargne.asgTauxInteret(0.025);
-    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.025);
+    f_epargne.asgTauxInteret(0.25);
+    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.25);
 }
 
 TEST(EpargneTest, Constructeur_tauxInteretInvalide_leveException)
@@ -76,7 +76,7 @@ TEST_F(EpargneValide, AsgTauxInteret_valeurInvalide_leveException)
 TEST_F(EpargneValide, Accesseurs_retournentValeursAttendues)
 {
     ASSERT_EQ(f_epargne.reqNoCompte(), 3002);
-    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.02);
+    ASSERT_EQ(f_epargne.reqTauxInteret(), 0.2);
     ASSERT_EQ(f_epargne.reqSolde(), 500);
     ASSERT_EQ(f_epargne.reqDescription(), "vacances");
     ASSERT_FALSE(f_epargne.reqDateOuverture().empty());
