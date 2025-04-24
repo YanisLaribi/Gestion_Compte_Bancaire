@@ -38,9 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Cheque.o \
 	${OBJECTDIR}/Client.o \
 	${OBJECTDIR}/Compte.o \
-	${OBJECTDIR}/CompteAbsentException.o \
-	${OBJECTDIR}/CompteDejaPresentException.o \
-	${OBJECTDIR}/CompteException.o \
 	${OBJECTDIR}/ContratException.o \
 	${OBJECTDIR}/Date.o \
 	${OBJECTDIR}/Epargne.o \
@@ -105,21 +102,6 @@ ${OBJECTDIR}/Compte.o: Compte.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Compte.o Compte.cpp
-
-${OBJECTDIR}/CompteAbsentException.o: CompteAbsentException.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteAbsentException.o CompteAbsentException.cpp
-
-${OBJECTDIR}/CompteDejaPresentException.o: CompteDejaPresentException.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteDejaPresentException.o CompteDejaPresentException.cpp
-
-${OBJECTDIR}/CompteException.o: CompteException.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteException.o CompteException.cpp
 
 ${OBJECTDIR}/ContratException.o: ContratException.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -236,45 +218,6 @@ ${OBJECTDIR}/Compte_nomain.o: ${OBJECTDIR}/Compte.o Compte.cpp
 	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Compte_nomain.o Compte.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Compte.o ${OBJECTDIR}/Compte_nomain.o;\
-	fi
-
-${OBJECTDIR}/CompteAbsentException_nomain.o: ${OBJECTDIR}/CompteAbsentException.o CompteAbsentException.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/CompteAbsentException.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteAbsentException_nomain.o CompteAbsentException.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/CompteAbsentException.o ${OBJECTDIR}/CompteAbsentException_nomain.o;\
-	fi
-
-${OBJECTDIR}/CompteDejaPresentException_nomain.o: ${OBJECTDIR}/CompteDejaPresentException.o CompteDejaPresentException.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/CompteDejaPresentException.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteDejaPresentException_nomain.o CompteDejaPresentException.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/CompteDejaPresentException.o ${OBJECTDIR}/CompteDejaPresentException_nomain.o;\
-	fi
-
-${OBJECTDIR}/CompteException_nomain.o: ${OBJECTDIR}/CompteException.o CompteException.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/CompteException.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CompteException_nomain.o CompteException.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/CompteException.o ${OBJECTDIR}/CompteException_nomain.o;\
 	fi
 
 ${OBJECTDIR}/ContratException_nomain.o: ${OBJECTDIR}/ContratException.o ContratException.cpp 

@@ -15,6 +15,7 @@
 
 #include "CompteException.h"
 
+namespace bancaire{
 /**
  * \class CompteException
  * \brief Exception si le Compte est absent
@@ -29,5 +30,5 @@ public:
    */
   CompteAbsentException (const std::string& p_raison);
 };
-
+} // namespace bancaire
 #endif /* COMPTEABSENTEXCEPTION_H */

@@ -7,8 +7,6 @@
       <itemPath>Cheque.h</itemPath>
       <itemPath>Client.h</itemPath>
       <itemPath>Compte.h</itemPath>
-      <itemPath>CompteAbsentException.h</itemPath>
-      <itemPath>CompteDejaPresentException.h</itemPath>
       <itemPath>CompteException.h</itemPath>
       <itemPath>ContratException.h</itemPath>
       <itemPath>Date.h</itemPath>
@@ -25,9 +23,6 @@
       <itemPath>Cheque.cpp</itemPath>
       <itemPath>Client.cpp</itemPath>
       <itemPath>Compte.cpp</itemPath>
-      <itemPath>CompteAbsentException.cpp</itemPath>
-      <itemPath>CompteDejaPresentException.cpp</itemPath>
-      <itemPath>CompteException.cpp</itemPath>
       <itemPath>ContratException.cpp</itemPath>
       <itemPath>Date.cpp</itemPath>
       <itemPath>Epargne.cpp</itemPath>
@@ -102,16 +97,6 @@
       <item path="Compte.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Compte.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteAbsentException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CompteAbsentException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteDejaPresentException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CompteDejaPresentException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CompteException.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -214,16 +199,6 @@
       <item path="Compte.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Compte.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteAbsentException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CompteAbsentException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteDejaPresentException.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="CompteDejaPresentException.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="CompteException.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CompteException.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -5,12 +5,17 @@
 
 #include "CompteException.h"
 
+
+
 /**
  * \file CompteException.cpp
  * \brief implémentation des méthodes de l'exception CompteException
  */
 
-
+namespace bancaire
+{
 /** \brief constructeur de l'exception CompteException */
 CompteException::CompteException (const std::string& p_raison)
 : std::runtime_error (p_raison) { };
+
+}  // namespace bancaire

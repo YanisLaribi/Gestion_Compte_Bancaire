@@ -31,6 +31,7 @@ public:
     QLineEdit *lineEditTaux;
     QLineEdit *lineEditSolde;
     QLineEdit *lineEditDescription;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *AjoutEpargne)
     {
@@ -39,7 +40,7 @@ public:
         AjoutEpargne->resize(409, 401);
         pushButton = new QPushButton(AjoutEpargne);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(150, 330, 90, 28));
+        pushButton->setGeometry(QRect(50, 330, 90, 28));
         label = new QLabel(AjoutEpargne);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 30, 181, 16));
@@ -67,9 +68,13 @@ public:
         lineEditDescription = new QLineEdit(AjoutEpargne);
         lineEditDescription->setObjectName(QString::fromUtf8("lineEditDescription"));
         lineEditDescription->setGeometry(QRect(260, 240, 113, 28));
+        pushButton_2 = new QPushButton(AjoutEpargne);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(270, 330, 91, 31));
 
         retranslateUi(AjoutEpargne);
         QObject::connect(pushButton, SIGNAL(clicked()), AjoutEpargne, SLOT(slotAjoutEpargne()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), AjoutEpargne, SLOT(close()));
 
         QMetaObject::connectSlotsByName(AjoutEpargne);
     } // setupUi
@@ -83,6 +88,7 @@ public:
         label_3->setText(QCoreApplication::translate("AjoutEpargne", "Solde :", nullptr));
         label_4->setText(QCoreApplication::translate("AjoutEpargne", "Description :", nullptr));
         label_5->setText(QString());
+        pushButton_2->setText(QCoreApplication::translate("AjoutEpargne", "Retour", nullptr));
     } // retranslateUi
 
 };

@@ -20,8 +20,7 @@
 #include "Client.h"
 #include "Cheque.h"
 #include "Epargne.h"
-#include "CompteAbsentException.h"
-#include "CompteDejaPresentException.h"
+#include "CompteException.h"
 #include "ContratException.h"
 
 class Tp3_fenetrePrincipal : public QMainWindow

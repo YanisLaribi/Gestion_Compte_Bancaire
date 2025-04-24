@@ -14,6 +14,8 @@
 #define COMPTEDEJAPRESENTEXCEPTION_H
 
 #include "CompteException.h"
+
+namespace bancaire{
 /**
  *\class CompteDejaPresentException
  * \brief class qui vérifie si un compte est déjà présent
@@ -29,6 +31,11 @@ public:
   CompteDejaPresentException (const std::string& p_raison);
 
 };
+
+
+
+
+}  // namespace bancaire
 
 #endif /* COMPTEDEJAPRESENTEXCEPTION_H */
 

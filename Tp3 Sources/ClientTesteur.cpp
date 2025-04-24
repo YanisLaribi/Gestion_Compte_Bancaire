@@ -24,8 +24,7 @@
 #include"Cheque.h"
 #include "Epargne.h"
 #include "ContratException.h"
-#include "CompteDejaPresentException.h"
-#include "CompteAbsentException.h"
+#include "CompteException.h"
 
 using namespace bancaire;
 using namespace util;

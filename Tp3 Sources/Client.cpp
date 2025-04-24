@@ -17,8 +17,7 @@
 
 #include "Client.h"
 #include <sstream>
-#include "CompteDejaPresentException.h"
-#include "CompteAbsentException.h"
+#include "CompteException.h"
 namespace bancaire
 {
 

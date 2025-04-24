@@ -13,6 +13,10 @@
 #include "Tp3_fenetrePrincipal.h"
 #include <qmessagebox.h>
 #include <QMessageBox>
+using namespace bancaire;
+/**
+ * 
+ */
 
 Tp3_fenetrePrincipal::Tp3_fenetrePrincipal ()
 : m_client (1234, "Dupont", "Jean", "4181234567", util::Date (1, 1, 2000))

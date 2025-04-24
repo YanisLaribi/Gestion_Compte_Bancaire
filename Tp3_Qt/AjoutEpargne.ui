@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>50</x>
      <y>330</y>
      <width>90</width>
      <height>28</height>
@@ -131,6 +131,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>330</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Retour</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -150,8 +163,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>AjoutEpargne</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slotAjoutEpargne()</slot>
+  <slot>slotRetournerMenu()</slot>
  </slots>
 </ui>

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/cppFiles/file.cc to edit this template
  */
 
+namespace bancaire{
 #include "CompteAbsentException.h"
 
 /**
@@ -13,3 +14,4 @@
 /** \brief constructeur de l'exception CompteAbsentException */
 CompteAbsentException::CompteAbsentException(const std::string& p_raison)
         :CompteException(p_raison){};
+}// namespace bancaire

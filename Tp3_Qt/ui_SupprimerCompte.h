@@ -24,6 +24,7 @@ public:
     QLabel *label;
     QPushButton *pushButton;
     QLineEdit *lineEdit;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *SupprimerCompte)
     {
@@ -35,13 +36,17 @@ public:
         label->setGeometry(QRect(10, 50, 201, 16));
         pushButton = new QPushButton(SupprimerCompte);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(150, 120, 90, 28));
+        pushButton->setGeometry(QRect(40, 120, 90, 28));
         lineEdit = new QLineEdit(SupprimerCompte);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(230, 40, 121, 41));
+        pushButton_2 = new QPushButton(SupprimerCompte);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(240, 120, 90, 28));
 
         retranslateUi(SupprimerCompte);
         QObject::connect(pushButton, SIGNAL(clicked()), SupprimerCompte, SLOT(slotSupprimerCompte()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), SupprimerCompte, SLOT(close()));
 
         QMetaObject::connectSlotsByName(SupprimerCompte);
     } // setupUi
@@ -51,6 +56,7 @@ public:
         SupprimerCompte->setWindowTitle(QCoreApplication::translate("SupprimerCompte", "SupprimerCompte", nullptr));
         label->setText(QCoreApplication::translate("SupprimerCompte", "Num\303\251ro du compte \303\240 supprimer :", nullptr));
         pushButton->setText(QCoreApplication::translate("SupprimerCompte", "Supprimer", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("SupprimerCompte", "Retour", nullptr));
     } // retranslateUi
 
 };

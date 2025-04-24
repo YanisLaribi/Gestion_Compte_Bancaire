@@ -34,6 +34,7 @@ public:
     QLineEdit *lineEditTransactions;
     QLineEdit *lineEditTaux;
     QLineEdit *lineEditTauxMin;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *AjoutCheque)
     {
@@ -42,7 +43,7 @@ public:
         AjoutCheque->resize(350, 407);
         pushButton = new QPushButton(AjoutCheque);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(130, 350, 90, 28));
+        pushButton->setGeometry(QRect(50, 350, 90, 28));
         label = new QLabel(AjoutCheque);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(30, 30, 141, 16));
@@ -79,9 +80,13 @@ public:
         lineEditTauxMin = new QLineEdit(AjoutCheque);
         lineEditTauxMin->setObjectName(QString::fromUtf8("lineEditTauxMin"));
         lineEditTauxMin->setGeometry(QRect(200, 280, 113, 28));
+        pushButton_2 = new QPushButton(AjoutCheque);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(210, 350, 90, 28));
 
         retranslateUi(AjoutCheque);
         QObject::connect(pushButton, SIGNAL(clicked()), AjoutCheque, SLOT(slotAjoutCheque()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), AjoutCheque, SLOT(close()));
 
         QMetaObject::connectSlotsByName(AjoutCheque);
     } // setupUi
@@ -96,6 +101,7 @@ public:
         label_4->setText(QCoreApplication::translate("AjoutCheque", "Description :", nullptr));
         label_5->setText(QCoreApplication::translate("AjoutCheque", "Nombre de Transactions :", nullptr));
         label_6->setText(QCoreApplication::translate("AjoutCheque", "Taux Interet Minimum :", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("AjoutCheque", "Retour", nullptr));
     } // retranslateUi
 
 };
