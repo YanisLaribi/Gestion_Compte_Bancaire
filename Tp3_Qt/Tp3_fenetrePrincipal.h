@@ -10,6 +10,15 @@
  * Created on 21 avril 2025, 19 h 17
  */
 
+/**
+ *\brief Déclaration de la classe Tp3_fenetrePrincipal.
+ * 
+ * Cette classe représente la fenêtre principale de l'application bancaire.
+ * Elle permet l'affichage des relevés de comptes, l'ajout de comptes épargne ou chèque,
+ * ainsi que la suppression de comptes. Elle utilise les classes dérivées de QWidget pour 
+ * recueillir les informations utilisateur.
+ */
+
 #ifndef _TP3_FENETREPRINCIPAL_H
 #define _TP3_FENETREPRINCIPAL_H
 
@@ -23,6 +32,11 @@
 #include "CompteException.h"
 #include "ContratException.h"
 
+/**
+ * \class Tp3_fenetrePrincipal
+ * \brief Fenêtre principale de l'application bancaire.
+ */
+
 class Tp3_fenetrePrincipal : public QMainWindow
 {
   Q_OBJECT
@@ -32,8 +46,19 @@ public:
   void afficherReleves ();
 
 private slots:
+  /**
+   * \brief Slot appelé lors de l'ajout d'un compte épargne.
+   */
   void slotAjoutEpargne ();
+
+  /**
+   * \brief Slot appelé lors de l'ajout d'un compte chèque.
+   */
   void slotAjoutCheque ();
+
+  /**
+   * \brief Slot appelé lors de la suppression d'un compte.
+   */
   void slotSupprimerCompte ();
 private:
   Ui::Tp3_fenetrePrincipal widget;

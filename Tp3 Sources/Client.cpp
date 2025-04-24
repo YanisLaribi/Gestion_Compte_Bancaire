@@ -138,7 +138,7 @@ namespace bancaire
       {
         std::ostringstream os;
 
-        os << "Le compte est déjà présent :"
+        os << "Le compte suivant est déjà présent, prennez attention au numéro de compte! :"
                 << std::endl
                 << p_nouveauCompte.reqCompteFormate ();
 

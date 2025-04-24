@@ -47,7 +47,7 @@ namespace bancaire
      * \pre nombreTransactions dans [0, 40] && tauxInteret > tauxMinimum
      */
     Cheque(int p_noCompte, double p_tauxInteret, float p_solde,
-           int p_nombreTransactions, double p_tauxInteretMinimum = 0.001,
+           int p_nombreTransactions, double p_tauxInteretMinimum = 0.1,
            const std::string& p_description = "Cheque");
 
     /** \brief Accesseur : retourne le taux d'intérêt minimum */
