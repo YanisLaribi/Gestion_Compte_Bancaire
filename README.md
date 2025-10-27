@@ -1,6 +1,6 @@
 # Gestion de Comptes Bancaires
 
-Projet C++ orienté objet pour la gestion de clients et de comptes bancaires avec validation, gestion d’exceptions et calcul d’intérêts.
+Projet C++ orienté objet pour la gestion de clients et de comptes bancaires avec validation, gestion d’exceptions et calcul d’intérêts. (Projet développé dans un but d’apprentissage)
 
 ## Fonctionnalités principales
 
@@ -27,6 +27,3 @@ Une interface graphique moderne et intuitive a été développée avec **Qt** af
 - `Date` : Outils pour la gestion et validation des dates, et le formatage.
 - `validationFormat` : Fonctions pour valider les formats (nom, date, téléphone, fichier).
 - `CompteException` : Gestion centralisée des erreurs spécifiques au métier bancaire.
-
-
-##Projet développé dans un but d’apprentissage.
