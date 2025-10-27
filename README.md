@@ -1,37 +1,31 @@
-Gestion de Comptes Bancaires — README
-Ce projet en C++ propose une modélisation complète pour gérer des clients et leurs comptes bancaires, incluant la gestion des exceptions, la validation des formats et le calcul d’intérêts selon différents types de comptes.
+# Gestion de Comptes Bancaires
 
-Fonctionnalités principales
-Création, gestion et suppression de clients et de comptes bancaires.
+Projet C++ orienté objet pour la gestion de clients et de comptes bancaires avec validation, gestion d’exceptions et calcul d’intérêts.
 
-Deux types de comptes : Epargne et Chèque, chacun avec ses propres règles et modes de calcul d’intérêt.​
+## Fonctionnalités principales
 
-Validation stricte des entrées (nom, date, téléphone, format du fichier).​
+- Création, gestion et suppression de clients et de comptes bancaires.
+- Prise en charge de différents types de comptes : **Épargne** et **Chèque**.
+- Calcul automatique des intérêts selon le type de compte.
+- Validation stricte des entrées utilisateurs et des fichiers.
+- Système d’exceptions personnalisées pour une meilleure robustesse.
 
-Gestion des erreurs et exceptions personnalisées (CompteException).​
+## Architecture du projet
 
-Manipulation et formatage des informations de comptes et de clients.​
+- `Client` : Gère les informations personnelles et la liste des comptes d’un client.
+- `Compte` : Classe de base abstraite. Permet l’extension vers :
+    - `Epargne` : Calcul d’intérêts standard, gestion du solde.
+    - `Cheque` : Gestion du nombre de transactions, taux d’intérêt minimum, règles spécifiques au compte chèque.
+- `Date` : Outils pour la gestion et validation des dates, et le formatage.
+- `validationFormat` : Fonctions pour valider les formats (nom, date, téléphone, fichier).
+- `CompteException` : Gestion centralisée des erreurs spécifiques au métier bancaire.
 
-Structure du projet
-Client : Représente une personne cliente avec ses informations et une liste de comptes.​
+## Utilisation
 
-Compte : Classe de base pour les comptes bancaires, permettant l’extension vers Epargne ou Chèque.​
+1. Création d’un client et de comptes associés via les constructeurs fournis.
+2. Ajout, modification, ou suppression de comptes pour chaque client possible via des méthodes dédiées.
+3. Validation automatique de toutes les données fournies.
+4. Affichage des détails et relevés des comptes au format lisible.
 
-Epargne : Spécialisation de Compte pour modéliser un compte d’épargne avec calcul d’intérêt propre.​
 
-Cheque : Spécialisation de Compte pour modéliser un compte chèque avec gestion du nombre de transactions, du taux d’intérêt minimal et du calcul d’intérêt adapté.​
-
-Date : Utilitaire pour la gestion et la validation des dates, le formatage et les opérations calendaires.​
-
-validationFormat : Fonctions utilitaires pour valider les formats de nom, de date, de téléphone, et de fichiers clients.​
-
-CompteException : Gestion centralisée des exceptions métier pour la robustesse de l’application.​
-
-Utilisation
-Création de clients et de comptes via les constructeurs.
-
-Ajout, modification, suppression de comptes pour chaque client.
-
-Validation automatisée des données lors de la création des objets.
-
-Affichage formaté des informations personnelles et des relevés de comptes.
+Projet développé dans un but d’apprentissage, pensé pour garantir la cohérence et la sécurité des données bancaires à travers une architecture orientée objet rigoureuse.
