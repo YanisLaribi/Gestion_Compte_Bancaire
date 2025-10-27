@@ -1,29 +1,29 @@
-# Gestion de Comptes Bancaires
+# Bank Account Management
 
-Projet C++ orienté objet pour la gestion de clients et de comptes bancaires avec validation, gestion d’exceptions et calcul d’intérêts. (Projet développé dans un but d’apprentissage)
+Object-oriented C++ project for managing clients and bank accounts with validation, exception handling, and interest calculation. (Project developed for educational purposes)
 
-## Fonctionnalités principales
+## Main Features
 
-- Création, gestion et suppression de clients et de comptes bancaires.
-- Prise en charge de différents types de comptes : **Épargne** et **Chèque**.
-- Calcul automatique des intérêts selon le type de compte.
-- Validation stricte des entrées utilisateurs et des fichiers.
-- Système d’exceptions personnalisées pour une meilleure robustesse.
+- Creation, management, and deletion of clients and bank accounts.
+- Support for different account types: **Savings** and **Checking**.
+- Automatic interest calculation based on account type.
+- Strict validation of user inputs and files.
+- Custom exception system for enhanced robustness.
 
-## Interface graphique Qt
+## Qt Graphical Interface
 
-Une interface graphique moderne et intuitive a été développée avec **Qt** afin de faciliter l’utilisation du programme :
+A modern and intuitive graphical interface has been developed with **Qt** to facilitate program usage:
 
-- Gestion des clients et comptes via des fenêtres et des formulaires interactifs.
-- Affichage dynamique des informations et des relevés.
-- Manipulation simplifiée (ajout, suppression, modification) via boutons et menus.
+- Manage clients and accounts through interactive windows and forms.
+- Dynamic display of information and statements.
+- Simplified manipulation (add, delete, modify) through buttons and menus.
 
-## Architecture du projet
+## Project Architecture
 
-- `Client` : Gère les informations personnelles et la liste des comptes d’un client.
-- `Compte` : Classe de base abstraite. Permet l’extension vers :
-    - `Epargne` : Calcul d’intérêts standard, gestion du solde.
-    - `Cheque` : Gestion du nombre de transactions, taux d’intérêt minimum, règles spécifiques au compte chèque.
-- `Date` : Outils pour la gestion et validation des dates, et le formatage.
-- `validationFormat` : Fonctions pour valider les formats (nom, date, téléphone, fichier).
-- `CompteException` : Gestion centralisée des erreurs spécifiques au métier bancaire.
+- `Client`: Manages personal details and the list of accounts of a client.
+- `Account`: Abstract base class allowing extension to:
+    - `Savings`: Standard interest calculation, balance management.
+    - `Checking`: Management of transaction counts, minimum interest rate, and specialized checking account rules.
+- `Date`: Utilities for date management, validation, and formatting.
+- `validationFormat`: Functions to validate formats (name, date, phone number, file).
+- `AccountException`: Centralized management of domain-specific error handling.
